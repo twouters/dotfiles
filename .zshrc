@@ -55,5 +55,8 @@ export EDITOR=vim
 BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
+# zsh-syntaxt-highlighting
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 # Include work related stuff
 source ~/.zshrc_work
