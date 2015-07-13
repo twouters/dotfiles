@@ -1,0 +1,79 @@
+" name: base16-default-dark
+
+"StatusLine settings
+hi StatusLine           color: #d8d8d8; background: #181818; "font-size: 8pt;
+" hi StatusLineBroken     color: #181818; background: #afafff; "font-size: 8pt;
+" hi StatusLineSecure     color: #181818; background: #afffaf; "font-size: 8pt;
+
+"Hide ContentSeparator - dotted line above StatusLine
+hi ContentSeparator     none;
+
+"CmdLine settings excluding Gradient
+hi Normal               color: #b8b8b8; background: #181818;
+hi CmdLine              background: #181818; color: #b8b8b8; font-size: 9pt;
+hi CompDesc             color: #d8d8d8; width: 50%; font-size: 9pt;
+hi CompIcon             width: 16px; min-width: 16px; display: inline-block; margin-right: .5ex;
+hi CompItem[selected]   background: #585858; color: #b8b8b8; 
+" hi CompLess             text-align: center; height: 0; line-height: .5ex; padding-top: 1ex;
+" hi CompMore             text-align: center; height: .5ex; line-height: .5ex; margin-bottom: -.5ex;
+hi CompMsg              font-style: italic; margin-left: 16px;
+hi CompResult           width: 45%; overflow: hidden;font-size: 10pt; font-family: ubuntu mono; font-weight: normal;
+hi CompTitle            color: #b8b8b8; background: #181818; font-weight: bold;
+hi CompTitle>*          padding: 0 .5ex;
+hi Filter               font-weight: bold;color: #b8b8b8;
+
+"When using tab complete in CmdLine, line separating Title from function and description
+" hi Gradient             height: 1px; margin-bottom: -1px; margin-top: -1px;
+" hi GradientLeft         background-color: #7cafc2;
+" hi GradientRight        background-color: #282828;
+
+"Used with ]f and [f
+hi FrameIndicator       background-color: #282828; opacity: 0.5; z-index: 999; position: fixed; top: 0; bottom: 0; left: 0; right: 0;
+
+hi Bell                 border: 0 none; background-color: #282828;
+hi ErrorMsg             color: #d8d8d8; background: #ab4642; font-weight: bold;
+
+
+"Hint section
+"hi Hint                 font-family: ubuntu; font-size: 10px; font-weight: bold; color: #ba8baf; background-color: #ab4642; border-color: ButtonShadow; border-width: 0px; border-style: solid; padding 0px 1px 0px 1px;
+hi Hint                 font-family: ubuntu; font-size: 10px; font-weight: bold; color: white; background-color: rgba(0, 0, 0, 0.5); border: solid 1px #b8b8b8;
+hi Hint::after          content: attr(number);
+hi HintActive           background: #7cafc2; color: #ba8baf;
+hi HintElem             background-color: #282828; color: #ba8baf;
+hi HintImage            opacity: .5;
+
+"Other important stuff
+hi InfoMsg              color: #b8b8b8; background: #282828;
+hi Message              white-space: normal; min-width: 100%; padding-left: 2em; text-indent: -2em; display: block;
+hi WarningMsg           color: #ab4642; background: #282828;
+hi ModeMsg              color: #b8b8b8; background: #282828; "CmdLine when Not in Use
+hi MoreMsg              color: #b8b8b8; background: #282828;
+hi NonText              color: #7cafc2; min-height: 16px; padding-left: 2px;
+hi Question             color: #d8d8d8; background: #282828; font-weight: bold;
+" hi Search               font-size: inherit; padding: 0; color: #282828; background-color: #f7ca88; padding: 0;
+hi Function             color: #a1b56c; background: #282828;
+hi Number               color: #dc9656; background: #282828
+hi String               color: #282828; background: #b8b8b8;
+hi Tag                  color: #282828; background: #b8b8b8;
+hi Title                color: #282828; background: #b8b8b8; font-weight: bold;
+hi URL                  text-decoration: none; color: #7cafc2; background: inherit;
+hi URL:hover            text-decoration: underline; cursor: pointer;
+hi LineNr               color: #b8b8b8; background: #282828;
+
+hi Boolean              color: #ab4642;
+hi Disabled             color: #ab4642;
+hi Keyword              color: #ab4642;
+hi Enabled              color: #a1b56c;
+hi Indicator            color: #7CAFC2;
+hi Mapping              color: #BA8BAF;
+hi Null                 color: #7CAFC2;
+
+hi Prompt               color: #d8d8d8; background #BA8BAF;
+
+
+"style -name statusbar chrome://* <<EOM
+"#status-bar statusbarpanel { padding: 0 1px !important; }
+"statusbarpanel > * { margin: 0 !important; padding: 0 2px 0 0 !important; }
+"EOM
+
+"For other descriptions of each item, please see ``Styling'' section included with Vimperator

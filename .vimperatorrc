@@ -1,0 +1,7 @@
+set "editor=urxvt -e vim -f"
+set gui=none
+set fc=true
+set focuscontent
+colorscheme base16-default-dark
+
+" vim: set ft=vimperator:
