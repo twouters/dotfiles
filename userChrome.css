@@ -1,7 +1,7 @@
-// .mozilla/firefox/$PROFILE/chrome/userChrome.css
+/* .mozilla/firefox/$PROFILE/chrome/userChrome.css */
 
-// Hide 1px leftover toolbar line when using vimperator with all toolbars hidden
-
+/* Hide 1px leftover toolbar line when using vimperator with all toolbars
+hidden `gui=none` */
 #navigator-toolbox::after {
   display: none !important;
 }
