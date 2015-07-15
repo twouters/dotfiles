@@ -60,6 +60,7 @@ sub action {
 		
 		#print "change timestamp to |$time| because of:".$server->{tag}.$target." <$nick> $text";
 		Irssi::settings_set_str('timestamp_format', $time);
+		Irssi::signal_emit('setup changed');
 
 		# different arguments for privmsg vs. action
 		if ($privmsg) {
@@ -72,6 +73,7 @@ sub action {
 		$escaped =~ s/%/%%/g;
 		#print "change back to $escaped";
 		Irssi::settings_set_str('timestamp_format', $tf);
+		Irssi::signal_emit('setup changed');
 	}
 }
 
