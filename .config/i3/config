@@ -148,9 +148,9 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         tray_output LVDS1
-        status_command py3status -c ~/.config/i3status/py3status.conf
+        status_command i3blocks
         position top
-        font pango:Ubuntu 8
+        font pango:Ubuntu, Icons 8
 
         colors {
                 background #181818
@@ -202,9 +202,9 @@ bindsym Print exec --no-startup-id scrot -e 'mv $f ~/screenshots/ 2>/dev/null'
 bindsym XF86Display exec --no-startup-id autorandr -c
 bindsym $mod+Shift+n exec --no-startup-id notify-send -i preferences-desktop-font NATO "<u>A</u>lpha\t <u>J</u>uliet\t  <u>S</u>iërra\n<u>B</u>ravo\t <u>K</u>ilo\t  <u>T</u>ango\n<u>C</u>harlie\t <u>L</u>ima\t  <u>U</u>niform\n<u>D</u>elta\t <u>M</u>ike\t  <u>V</u>ictor\n<u>E</u>cho\t <u>N</u>ovember <u>W</u>hisky\n<u>F</u>oxtrot\t <u>O</u>scar\t  <u>X</u>-ray\n<u>G</u>olf\t <u>P</u>apa\t  <u>Y</u>ankee\n<u>H</u>otel\t <u>Q</u>uebec\t  <u>Z</u>ulu\n<u>I</u>ndia\t <u>R</u>omeo"
 bindsym $mod+Shift+w exec --no-startup-id "virsh -c qemu:///system start win7; spicy --uri=spice://127.0.0.1:5923"
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% && pkill -SIGUSR1 i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% && pkill -SIGUSR1 i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle && pkill -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle && pkill -RTMIN+10 i3blocks
 bindsym $mod+n exec --no-startup-id nmcli_dmenu
 bindsym $mod+p exec --no-startup-id passmenu
 
