@@ -169,7 +169,7 @@ new_float 1pixel
 
 exec --no-startup-id /usr/lib/fingerprint-gui/fingerprint-polkit-agent -d
 exec --no-startup-id owncloud
-exec --no-startup-id xautolock -time 10 -locker 'i3lock -d -c 1d1f21'
+exec --no-startup-id xautolock -time 10 -locker 'i3lock -e -c 181818'
 exec --no-startup-id unclutter --fork
 
 # floating apps
@@ -193,7 +193,7 @@ for_window [class=Spicy] floating enable; resize shrink width 100ppt; resize gro
 for_window [class=Wfica_Seamless] floating enable
 for_window [title=Wfica] floating enable
 
-bindsym XF86ScreenSaver exec i3lock -d -c 333333
+bindsym XF86ScreenSaver exec i3lock -e -c 181818
 bindsym $mod+Left workspace prev
 bindsym $mod+Right workspace next
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
