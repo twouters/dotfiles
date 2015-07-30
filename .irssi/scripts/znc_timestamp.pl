@@ -32,15 +32,19 @@ sub action {
 	my ($server, $text, $nick, $address, $target, $privmsg) = @_;
 
 	# What we need to match: ^[17:05:40]
-	if ($text =~ /^(\x01ACTION )?\[..:..:..\]/) {
+	if ($text =~ /^(\x01ACTION )?\[..:..:.. [0-9]{4}-[0-9]{2}-[0-9]{2}\]/) {
 		my $window;
 		my $time = $text;
 		my $date;
-		$time =~ s/^(\x01ACTION )?\[(..:..:..)\] .*/$2/g;
-		$text =~ s/\[(..:..:..)\] //;
+		$timestamp =~ s/^(\x01ACTION )?\[(..:..:.. [0-9]{4}-[0-9]{2}-[0-9]{2})\] .*/$2/g;
+		$text =~ s/\[(..:..:.. [0-9]{4}-[0-9]{2}-[0-9]{2})\] //;
 
-		# use today as date
-		$date = DateTime->now->ymd;
+		($date, $time) = split(/ /, $timestamp);
+		if( !$time ){ # the timestamp doesn't have a date
+			$time = $date;
+			# use today as date
+			$date = DateTime->now->ymd;
+		}
 
 		if( $date ne $prev_date ){
 			if( $target =~ /#|&/ ){ # find channel window based on target
