@@ -2,6 +2,8 @@ set "editor=urxvt -e vim -f"
 set gui=none
 set fc=true
 set focuscontent
+no gr :emenu View.Enter Reader View<CR>
+no gR :emenu View.Close Reader View<CR>
 colorscheme base16-default-dark
 
 " vim: set ft=vimperator:
