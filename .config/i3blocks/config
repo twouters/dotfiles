@@ -84,6 +84,7 @@ interval=10
 separator=false
 
 [wifi]
+command=~/bin/wifi
 label=
 instance=wlp3s0
 interval=10
