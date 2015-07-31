@@ -36,6 +36,13 @@ if ($acpi !~ /: (\w+), (\d+)%/) {
 $status = $1;
 $percent = $2;
 
+# Unknown battery state
+#
+#  TLP provides a method to stop/start charging at a specific percentage.
+#  When the battery has a higher charge level than the minimal start threshold,
+#  the battery will not charge and acpi will return an Unknown state on my
+#  Thinkpad T530 when plugging in the AC.
+
 if ($status eq 'Discharging') {
     if ($percent < 25) {
 	$full_text = '';
@@ -47,7 +54,9 @@ if ($status eq 'Discharging') {
 	$full_text = '';
     }
 } elsif ($status eq 'Charging') {
-	$full_text = '';
+    $full_text = '';
+} elsif ($status eq 'Unknown') {
+    $full_text = '';
 }
 
 $full_text .= " $percent%";
